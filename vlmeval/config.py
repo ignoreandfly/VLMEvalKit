@@ -2376,8 +2376,12 @@ model_groups = [
     lfm2vl_series, rbdashmm_api_series_lmdeploy, interns1_series, insight_v_series, covt_series
 ]
 
+aya_series = {
+    'tiny-aya-global': partial(AyaLM, model_path='CohereLabs/tiny-aya-global'),
+}
+
 # add by EASI team
-model_groups.extend([bagel_series, spatial_related_models, sensenova_si_series])
+model_groups.extend([bagel_series, spatial_related_models, sensenova_si_series, aya_series])
 
 for grp in model_groups:
     supported_VLM.update(grp)
